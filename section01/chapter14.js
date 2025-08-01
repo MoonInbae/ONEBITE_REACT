@@ -8,6 +8,8 @@ let a = 1; // 전역 스코프
 function funcA() {
     let b = 2; // 지역 스코프
     console.log(a);
+
+    // function funcB() {}
 }
 
 funcA();
@@ -22,4 +24,4 @@ for (let i = 0; i < 10; i++) {
     let d = 1;
 }
 
-funcB();
+// funcB(); // 함수 안에서 선언한 함수는 지역 스코프로 바깥에서 호출 불가가
