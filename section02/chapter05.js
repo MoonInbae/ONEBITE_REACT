@@ -21,5 +21,15 @@ let o5 = { name: '문인배' };
 let o6 = o5;
 let o7 = { ...o5 };
 
-console.log(o1 === o2);
-console.log(o1 === o3);
+// 얕은 비교(참조값을 기준으로 비교)
+console.log(o5 === o6); // 얕은 복사로 인한 같은 참조값으로 true출력
+console.log(o5 === o7); // 깊은 복사로 구조는 같지만 다른 참조값으로 false출력
+
+// 그렇다면 어떻게 구조가 같은지 비교하는가? => JSON.stringify 사용
+// JSON.stringify이란 자바스크립트 내장 함수로 객체를 문자열로 변환하는 기능
+console.log(
+    // 깊은 비교(객체를 문자열로 변환하여 프로퍼티 값을 기준으로 비교)
+    JSON.stringify(o5) === JSON.stringify(o7) // 문자열로 변환하여 비교하기 때문에 true 반환
+);
+
+// 마지막으로 Array과 Function도 객체 타입이다.(프로퍼티, 메서드를 가질 수 있다.)
